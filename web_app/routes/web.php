@@ -17,6 +17,7 @@
 
 Route::get('/','HomeController@home');
 Route::get('/donate','HomeController@donate');
+Route::post('/donate','HomeController@donate');
 Route::get('/gallery','HomeController@gallery');
 Route::get('/events','HomeController@events');
 Route::get('/about','HomeController@about');
@@ -28,20 +29,20 @@ Route::get('/admin/login','AdminController@login');
 // });
 
 
-Route::get('teachers','HomeController@showTeachers')->name('teachers');
-Route::post('teachers','HomeController@postTeachers')->name('teachers');
+// Route::get('teachers','HomeController@showTeachers');
+Route::post('/teachers','HomeController@postTeachers');
 
-Route::get('volunteer','HomeController@showVolunteer')->name('volunteer');
-Route::post('volunteer','HomeController@postVolunteer')->name('volunteer');
+// Route::get('volunteer','HomeController@showVolunteer');
+Route::post('/volunteer','HomeController@postVolunteer');
 
-Route::get('donate','HomeController@showDonateForm')->name('donate');
-Route::post('donate','HomeController@postDonateForm')->name('donate');
+// Route::get('donate','HomeController@showDonateForm');
+// Route::post('donate','HomeController@postDonateForm');
 
-Route::get('addItem','AdminController@showAddItem')->name('addItem');
-Route::post('addItem','AdminController@addItem')->name('addItem');
+// Route::get('addItem','AdminController@showAddItem');
+// Route::post('addItem','AdminController@addItem');
 
-Route::get('addEvent','AdminController@showAddEvent')->name('addEvent');
-Route::post('addEvent','AdminController@addEvent')->name('addEvent');
+// Route::get('addEvent','AdminController@showAddEvent');
+// Route::post('addEvent','AdminController@addEvent');
 
 //Route::get('/','AuthController@home');
 /*Route::get('','AdminController@showlogin')->name('');

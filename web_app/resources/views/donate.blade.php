@@ -159,7 +159,60 @@
         <div class="row">
 
           <div class="col-md-12 pl-md-5">
-            Form
+              <h1>To Donate</h1>
+              <form action=" {{ url('/donate') }} " method="POST">
+                {{ csrf_field() }}
+                <div class="form-group">
+                  <input type="text" class="form-control px-3 py-3" name="d_name" placeholder="Your Full Name">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control px-3 py-3" name="d_email" placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                  <input type="tel" class="form-control px-3 py-3" name="d_mobile" placeholder="Mobile No.">
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control px-3 py-3" name="d_amount" placeholder="Amount">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control px-3 py-3" name="d_pan" placeholder="PAN No.">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control px-3 py-3" name="d_city" placeholder="City">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control px-3 py-3" name="d_state" placeholder="State">
+                </div>
+                <div class="form-group">
+                  <h5>Are you Organization or Individual</h5>
+                  <select id="donar_type" name="donar_type" class="form-control">
+ 								    <option value="organization">Organization</option>
+  								  <option value="individual">Individual</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <h5>Do you want to pay for NGO or Particular Event</h5>
+                  <select id="donation-type" name="donation_type" class="form-control">
+ 								    <option value="NGO">NGO</option>
+  								  <option value="Event">Event</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <h5>Select Event</h5>
+                    <select id="event" name="event" class="form-control">
+                      @foreach($events as $key=>$events)
+                      <option value="{{$events->e_id}}" selected>{{$events->e_name}}</option>
+                      @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                  <h5>Photo</h5>
+                  <input type="file" class="form-control px-3 py-3" id="d_photo" name="d_photo"> 
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Send Message" class="btn btn-success py-3 px-5">
+                </div>
+              </form>
           </div>
 
         </div>
@@ -168,5 +221,24 @@
     </div>
     <!-- .featured-donate -->
 
+@endsection
+
+@section('custom-scripts')
+    
+<script>
+  $(document).ready(function() {
+    
+    $('#event').parent().hide();
+    $('#donation-type').on('change',function() {
+      // console.log($(this).val());
+      if($(this).val() == 'NGO') {
+        $('#event').parent().hide();
+      }
+      else if($(this).val() == 'Event') {
+        $('#event').parent().show();
+      }
+    });
+  });
+  </script>
 
 @endsection

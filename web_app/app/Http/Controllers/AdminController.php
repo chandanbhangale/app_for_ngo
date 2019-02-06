@@ -16,9 +16,13 @@ use Illuminate\Support\Facades\Input;
 
 class AdminController extends Controller
 {
+    public function login() {
+        return view('dashboard');
+    }
+
     public static function showLogin(Request $request)
     {
-    		//return view('');
+    	// return view('');
     }
     public static function checkLogin(Request $request)
 	{

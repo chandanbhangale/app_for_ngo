@@ -39,32 +39,32 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item" id="dashboard">
-                        <a class="nav-link" href=" {{ url('/user/dashboard') }} ">
-                            <i class="material-icons">dashboard</i>
+                        <a class="nav-link" href=" {{ url('/admin/dashboard') }} ">
+                            {{-- <i class="material-icons">dashboard</i> --}}
                             <p>Dashboard</p>
                         </a>
                     </li>
                     <li class="nav-item" id="members">
-                        <a class="nav-link" href=" {{ url('/user/members') }} ">
-                            <i class="material-icons">group</i>
-                            <p>Family Members</p>
+                        <a class="nav-link" href=" {{ url('/admin/events') }} ">
+                            {{-- <i class="material-icons">group</i> --}}
+                            <p>Events</p>
                         </a>
                     </li>
                     <li class="nav-item"  id="reports">
-                        <a class="nav-link" href=" {{ url('/user/report') }} ">
-                            <i class="material-icons">table_chart</i>
-                            <p>Reports</p>
+                        <a class="nav-link" href=" {{ url('/admin/requests') }} ">
+                            {{-- <i class="material-icons">table_chart</i> --}}
+                            <p>Requests</p>
                         </a>
                     </li>
                     <li class="nav-item"  id="addie">
-                        <a class="nav-link" href=" {{ url('/user/viewie') }} ">
-                            <i class="material-icons">add</i>
-                            <p>Add Income/Expense</p>
+                        <a class="nav-link" href=" {{ url('/admin/donations') }} ">
+                            {{-- <i class="material-icons">add</i> --}}
+                            <p>Donations</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/logout') }}">
-                            <i class="material-icons">power_settings_new</i>
+                        <a class="nav-link" href="{{ url('/admin/logout') }}">
+                            {{-- <i class="material-icons">power_settings_new</i> --}}
                             <p>Log Out</p>
                         </a>
                     </li>

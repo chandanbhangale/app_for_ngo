@@ -65,7 +65,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a href=" {{ url('/') }} " class="nav-link">Home</a>
             </li>
             <li class="nav-item">
@@ -138,7 +138,7 @@
     id = "chatbot">
     </iframe>
 
-    
+
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen">
@@ -172,7 +172,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="{{ URL::to('js/google-map.js') }}"></script>
     <script src="{{ URL::to('js/main.js') }}"></script>
-    <script>
+    {{-- <script>
         window.sr = new scrollReveal();
     </script>
     <script>
@@ -191,7 +191,7 @@
                 close: 'fa fa-remove'
             }
         });
-    </script>
+    </script> --}}
 
     @yield('custom-scripts')
 </body>
