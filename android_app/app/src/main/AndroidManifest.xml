@@ -19,7 +19,8 @@
         <activity android:name=".PODashboard" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".Signin" />
-        <activity android:name=".ViewPOActivity"></activity>
+        <activity android:name=".ViewPOActivity" />
+        <activity android:name=".StatusActivity"></activity>
     </application>
 
 </manifest>

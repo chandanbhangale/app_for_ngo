@@ -21,7 +21,7 @@ public class PODashboard extends BaseActivity {
         viewreq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( PODashboard.this, ViewPOActivity.class);
+                Intent i = new Intent(PODashboard.this, ViewPOActivity.class);
                 i.putExtra("flag",0);
                 startActivity(i);
                 CustomIntent.customType(PODashboard.this,"left-to-right");
