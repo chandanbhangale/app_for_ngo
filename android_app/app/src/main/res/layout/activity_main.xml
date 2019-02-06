@@ -33,4 +33,13 @@
         tools:layout_editor_absoluteX="153dp"
         tools:layout_editor_absoluteY="336dp" />
 
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="180dp" />
+
 </android.support.constraint.ConstraintLayout>
