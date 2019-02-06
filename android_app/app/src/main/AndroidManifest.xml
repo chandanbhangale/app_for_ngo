@@ -20,7 +20,8 @@
         <activity android:name=".BaseActivity" />
         <activity android:name=".Signin" />
         <activity android:name=".ViewPOActivity" />
-        <activity android:name=".StatusActivity"></activity>
+        <activity android:name=".StatusActivity" />
+        <activity android:name=".PrincDashboard"></activity>
     </application>
 
 </manifest>
