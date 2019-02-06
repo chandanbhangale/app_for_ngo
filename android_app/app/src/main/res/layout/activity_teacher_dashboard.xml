@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PrincDashboard"
+    tools:context=".TeacherDashboard"
     android:orientation="vertical"
     android:padding="10dp"
 
@@ -20,7 +20,7 @@
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:id="@+id/viewperformance"
+            android:id="@+id/entermarks"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_margin="10dp">
@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="View Performance"/>
+                    android:text="Enter marks"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -50,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="View performance of whole school"
+                    android:text="Enter marks(%) of all students"
                     android:padding="5dp"
                     android:textColor="@android:color/darker_gray"/>
 
@@ -60,7 +60,7 @@
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:id="@+id/addteacher"
+            android:id="@+id/viewgraph"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_margin="10dp">
@@ -80,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="Add Teacher"/>
+                    android:text="View Progress"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -91,7 +91,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Add a new teacher to the school"
+                    android:text="View graphical progress report of students"
                     android:padding="5dp"
                     android:textColor="@android:color/darker_gray"/>
 
@@ -109,7 +109,7 @@
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:id="@+id/viewrequests"
+            android:id="@+id/requestasset"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_margin="10dp">
@@ -129,7 +129,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="View Requests"/>
+                    android:text="Request asset"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -140,7 +140,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="View all the school asset requests"
+                    android:text="Request for asset required for school"
                     android:padding="5dp"
                     android:textColor="@android:color/darker_gray"/>
 
@@ -150,7 +150,7 @@
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:id="@+id/viewcomplaint"
+            android:id="@+id/registercomplaint"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_margin="10dp">
@@ -172,7 +172,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="View Complaints"
+                    android:text="Register Complaint"
                     android:textStyle="bold" />
 
                 <View
@@ -185,7 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="View complaints of various members of NGO"
+                    android:text="Enter complaints in the school system"
                     android:padding="5dp"
                     android:textColor="@android:color/darker_gray"/>
 
@@ -205,7 +205,7 @@
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:id="@+id/chatprinci"
+            android:id="@+id/chatteacher"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_margin="10dp">
