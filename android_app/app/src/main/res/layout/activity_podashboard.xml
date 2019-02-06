@@ -10,7 +10,8 @@
 
     android:background="#fcfcfc"
     android:gravity="center"
-    android:id="@+id/ll">
+    android:id="@+id/ll"
+    tools:ignore="MissingDefaultResource">
 
     <LinearLayout
         android:clipToPadding="false"
