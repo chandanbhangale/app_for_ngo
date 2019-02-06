@@ -21,7 +21,7 @@
         <activity android:name=".Signin" />
         <activity android:name=".ViewPOActivity" />
         <activity android:name=".StatusActivity" />
-        <activity android:name=".PrincDashboard"></activity>
+        <activity android:name=".PrincDashboard" />
     </application>
 
 </manifest>
