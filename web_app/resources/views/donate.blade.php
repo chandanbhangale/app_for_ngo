@@ -158,19 +158,8 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-md-6">
-            <img src="images/bg_3.jpg" alt="Image placeholder" class="img-fluid">
-          </div>
-
-          <div class="col-md-6 pl-md-5">
-            <span class="featured-text d-block mb-3">Success Stories</span>
-            <h2>School in Africa Need Renovations. Thanks To All Donors</h2>
-            <p class="mb-3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <span class="fund-raised d-block mb-5">We have raised $30,000</span>
-
-            <p>
-              <a href="#" class="btn btn-success btn-hover-white py-3 px-5">Read The Full Story</a>
-            </p>
+          <div class="col-md-12 pl-md-5">
+            Form
           </div>
 
         </div>
@@ -179,62 +168,5 @@
     </div>
     <!-- .featured-donate -->
 
-    <div class="site-section bg-light">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-12 text-center">
-            <h2>Testimonial</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mb-5">
-            <div class="block-47 d-flex">
-              <div class="block-47-image">
-                <img src="images/person_3.jpg" alt="Image placeholder" class="img-fluid">
-              </div>
-              <blockquote class="block-47-quote">
-                <p>&ldquo;A small river named Duden flows by their place and supplies it with the necessary regelialia.&rdquo;</p>
-                <cite class="block-47-quote-author">Carl Adams</cite>
-              </blockquote>
-            </div>
-          </div>
-          <div class="col-md-6 mb-5">
-            <div class="block-47 d-flex">
-              <div class="block-47-image">
-                <img src="images/person_2.jpg" alt="Image placeholder" class="img-fluid">
-              </div>
-              <blockquote class="block-47-quote">
-                <p>&ldquo;A small river named Duden flows by their place and supplies it with the necessary regelialia.&rdquo;</p>
-                <cite class="block-47-quote-author">&mdash; Nicole Watson</cite>
-              </blockquote>
-            </div>
-          </div>
-
-          <div class="col-md-6 mb-5">
-            <div class="block-47 d-flex">
-              <div class="block-47-image">
-                <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid">
-              </div>
-              <blockquote class="block-47-quote">
-                <p>&ldquo;A small river named Duden flows by their place and supplies it with the necessary regelialia.&rdquo;</p>
-                <cite class="block-47-quote-author">Vanessa Horton</cite>
-              </blockquote>
-            </div>
-          </div>
-          <div class="col-md-6 mb-5">
-            <div class="block-47 d-flex">
-              <div class="block-47-image">
-                <img src="images/person_4.jpg" alt="Image placeholder" class="img-fluid">
-              </div>
-              <blockquote class="block-47-quote">
-                <p>&ldquo;A small river named Duden flows by their place and supplies it with the necessary regelialia.&rdquo;</p>
-                <cite class="block-47-quote-author">&mdash; Adam Spratt</cite>
-              </blockquote>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
 
 @endsection

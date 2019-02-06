@@ -66,22 +66,25 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a href="index.html" class="nav-link">Home</a>
+              <a href=" {{ url('/') }} " class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-              <a href="donate.html" class="nav-link">Donate</a>
+              <a href=" {{ url('/donate') }} " class="nav-link">Donate</a>
             </li>
             <li class="nav-item">
-              <a href="gallery.html" class="nav-link">Gallery</a>
+              <a href=" {{ url('/gallery') }} " class="nav-link">Gallery</a>
             </li>
             <li class="nav-item">
-              <a href="blog.html" class="nav-link">Events</a>
+              <a href=" {{ url('/events') }} " class="nav-link">Events</a>
             </li>
             <li class="nav-item">
-              <a href="about.html" class="nav-link">About</a>
+              <a href=" {{ url('/about') }} " class="nav-link">About</a>
             </li>
             <li class="nav-item">
-              <a href="contact.html" class="nav-link">Get Involved</a>
+              <a href=" {{ url('/getinvolved') }} " class="nav-link">Get Involved</a>
+            </li>
+            <li class="nav-item">
+              <a href=" {{ url('/admin/login') }} " class="nav-link">Admin Login</a>
             </li>
           </ul>
         </div>

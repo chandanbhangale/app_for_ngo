@@ -11,8 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/','AuthController@home');
+Route::get('/','HomeController@home');
+Route::get('/donate','HomeController@donate');
+Route::get('/gallery','HomeController@gallery');
+Route::get('/events','HomeController@events');
+Route::get('/about','HomeController@about');
+Route::get('/getinvolved','HomeController@getinvolved');
+
+Route::get('/admin/login','AdminController@login');
