@@ -8,5 +8,5 @@ class teachers extends Model
 {
     protected $table='teachers';
     protected $primaryKey='t_id';
-    public $timestamps=true;
+    public $timestamps=false;
 }

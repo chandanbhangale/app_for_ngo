@@ -8,5 +8,5 @@ class events extends Model
 {
     protected $table='events';
     protected $primaryKey='e_id';
-    public $timestamps=true;
+    public $timestamps=false;
 }

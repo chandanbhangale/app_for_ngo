@@ -8,5 +8,5 @@ class donors extends Model
 {
      protected $table='donors';
     protected $primaryKey='d_id';
-    public $timestamps=true;
+    public $timestamps=false;
 }

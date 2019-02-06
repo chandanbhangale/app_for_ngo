@@ -8,5 +8,5 @@ class store extends Model
 {
     protected $table='store';
     protected $primaryKey='i_id';
-    public $timestamps=true;
+    public $timestamps=false;
 }
