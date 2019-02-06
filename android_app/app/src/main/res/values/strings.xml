@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">NGO App</string>
+    <string-array name="array1">
+        <item>Teacher</item>
+        <item>PurchaseOfficer</item>
+        <item>StoreManager</item>
+        <item>Principal</item>
+    </string-array>
+
+    <string-array name="array2">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+    </string-array>
 </resources>

@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PODashboard" />
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".Signin" />
+        <activity android:name=".ViewPOActivity"></activity>
     </application>
 
 </manifest>
