@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "703150649530",
+    "firebase_url": "https://ngo-app-ff3e2.firebaseio.com",
+    "project_id": "ngo-app-ff3e2",
+    "storage_bucket": "ngo-app-ff3e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703150649530:android:45e08d8d4cf322a1",
+        "android_client_info": {
+          "package_name": "com.example.chandan.ngoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703150649530-1oejvto9eer2jj9mrlq9r0kgor3cuqfk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chandan.ngoapp",
+            "certificate_hash": "c922cd97ac02835cb4677a9351e2c958709f7f31"
+          }
+        },
+        {
+          "client_id": "703150649530-rb8jpgb9qi5r97j3ub6lkl7q0cq3rktt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsmAEUvDo9svYzVUvoqHnX8cRC3xyn37E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703150649530-rb8jpgb9qi5r97j3ub6lkl7q0cq3rktt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
