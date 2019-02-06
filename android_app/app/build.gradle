@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.example.sugamxp.assetmanagment"
+        applicationId "com.example.chandan.ngoapp"
         minSdkVersion 23
         targetSdkVersion 26
         versionCode 1
