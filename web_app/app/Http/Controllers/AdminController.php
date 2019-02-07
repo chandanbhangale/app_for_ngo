@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\donors;
+use App\User;
 use App\events;
 use App\store;
 use App\teachers;
@@ -16,88 +17,93 @@ use Illuminate\Support\Facades\Input;
 
 class AdminController extends Controller
 {
-    public function login() {
-        return view('dashboard');
-    }
+    public function login(Request $request) {
+        if($request->isMethod('get')) {
+			if(session('id')) {
+				return view('dashboard');
+			}
+			return view('login');
+		}
+		$username = request('username');
+        $password = request('password');
 
-    public static function showLogin(Request $request)
-    {
-    	// return view('');
-    }
-    public static function checkLogin(Request $request)
-	{
-				$username= $request->input('username');
-				$pass= $request->input('password');
-				$user = DB::table('users')->select('user_name','password')->where('user_name',$username)->get();
-				//return $user;
-				if($pass == $user[0]->password )
-					{
-							$request->session()->put('email',$username);
-							return redirect()->route('');	
-					}
-				else
-				{
-					$request->session()->flash('error','Invalid Username & Password');
-					return redirect()->route('login');
+        $user = User::where([['user_name','=',$username],['password','=',$password]])->first();
 
-				}
+        if(isset($user)) {
+            session(['id' => $user->id]);
+            session(['username' => $user->user_name]);
+            return view('dashboard');
+		}
+		else {
+			return 'Invalid credentials';
+		}
 	}
 	
-	public static function showAddEvent(Request $request)
-	{
-		return view('addEvent');
+	public function logout() {
+        if(session('id')) {
+            session()->flush();
+            return redirect('/');
+        }
 	}
-
-
 	
-	public static function addEvent(Request $request)
-	{	
-			$e_name = $request->input('e_name');
-			$e_status = "upcomming";
-			$e_description = $request->input('e_details');
-			$e_date = $request->input('e_date');
-			$e_amount = $request->input('e_amount');
-			$e_head = $request->input('e_head');
-			$e_address = $request->input('e_addr');
-			$e_photo = $request->input('e_photO');
-			$events =  new events;
-			$destinationPath = 'events';
-			if($request->hasFile('e_photo'))
-                      {
-                            $rules = ['e_photo' => 'mimes:jpg,png,jpeg'];
-                             $validator = Validator::make(Input::all() , $rules);
-                            if ($validator->fails())
-                             {
-                              $request->session()->flash('error', 'Please Upload Only JPG or PNG type image. File size should be less than 1 mb.');
-                             
-                             }
-                            $extension = $request->file('e_photo')->getClientOriginalExtension();
-                            $filenametostore = 'photo'.$e_name.'.'.$extension;
-                    
-                            $path =  $request->file('e_photo')->storeAs($destinationPath, $filenametostore,'public_uploads');
+	public function events(Request $request) {
+		if($request->isMethod('get')) {
+			$events = events::all();
+			return view('adminevents')->with('events',$events);
+		}
+		$e_name = $request->input('e_name');
+		$e_status = "upcoming";
+		$e_description = $request->input('e_details');
+		$e_date = $request->input('e_date');
+		$e_amount = $request->input('e_amount');
+		$e_head = $request->input('e_head');
+		$e_address = $request->input('e_addr');
+		// $e_photo = $request->input('e_photo');
+		$events =  new events;
+		$destinationPath = 'events';
+		if($request->hasFile('e_photo'))
+				  {
+						$rules = ['e_photo' => 'mimes:jpg,png,jpeg'];
+						 $validator = Validator::make(Input::all() , $rules);
+						if ($validator->fails())
+						 {
+						  $request->session()->flash('error', 'Please Upload Only JPG or PNG type image. File size should be less than 1 mb.');
+						 
+						 }
+						$extension = $request->file('e_photo')->getClientOriginalExtension();
+						$filenametostore = 'photo'.$e_name.'.'.$extension;
+				
+						$path =  $request->file('e_photo')->storeAs($destinationPath, $filenametostore,'public_uploads');
 
 
-                          
-							
-                           $events->e_photo = $filenametostore;  
-                          
-                      }
+					  
+						
+					   $events->e_photo = $filenametostore;  
+					  
+				  }
 
 
-			$events->e_name = $e_name;
-			$events->e_status = $e_status;
-			$events->e_description = $e_description;
-			$events->e_date = $e_date;
-			$events->e_amount = $e_amount;
-			$events->e_head = $e_head;
-			$events->e_address = $e_address;
-			$events->save();
+		$events->e_name = $e_name;
+		$events->e_status = $e_status;
+		$events->e_description = $e_description;
+		$events->e_date = $e_date;
+		$events->e_amount = $e_amount;
+		$events->e_head = $e_head;
+		$events->e_address = $e_address;
+		$events->save();
 
-			$request->session()->flash('error','Events added Successfully ...');
-			return view("addEvent");
+		// $request->session()->flash('error','Events added Successfully ...');
+		return redirect('/admin/events');
 
 	}
 
+	public function addevents() {
+		return view('addevents');
+	}
+
+	public function requests() {
+		
+	}
 
 	public static function showAddItem(Request $request)
 	{

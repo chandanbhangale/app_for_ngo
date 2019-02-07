@@ -37,6 +37,7 @@
                         </a>
                     </div>
                 </div>
+                @if(session('id'))
                 <ul class="nav">
                     <li class="nav-item" id="dashboard">
                         <a class="nav-link" href=" {{ url('/admin/dashboard') }} ">
@@ -70,6 +71,7 @@
                     </li>
                     <!-- your sidebar here -->
                 </ul>
+                @endif
             </div>
         </div>
         <div class="main-panel">
@@ -109,7 +111,7 @@
                         <ul>
                             <li>
                                 <a href=" {{ url('/') }} ">
-                                    Family Expenditure Planner
+                                    NGO
                                 </a>
                             </li>
                         </ul>
@@ -120,9 +122,6 @@
                             document.write(new Date().getFullYear())
                         </script>, made with
                         <i class="material-icons">favorite</i>
-                        by
-                        <a>M<sup>3</sup></a>
-                        for a better saving.
                     </div>
                     <!-- your footer here -->
                 </div>

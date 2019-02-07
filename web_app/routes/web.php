@@ -24,6 +24,13 @@ Route::get('/about','HomeController@about');
 Route::get('/getinvolved','HomeController@getinvolved');
 
 Route::get('/admin/login','AdminController@login');
+Route::post('/admin/login','AdminController@login');
+Route::get('/admin/events','AdminController@events');
+Route::post('/admin/events','AdminController@events');
+Route::get('/admin/addevents','AdminController@addevents');
+Route::get('/admin/requests','AdminController@requests');
+Route::get('/admin/donations','AdminController@donations');
+Route::get('/admin/logout','AdminController@logout');
 // Route::get('/', function () {
 //     return view('donar');
 // });
