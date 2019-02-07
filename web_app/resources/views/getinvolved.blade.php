@@ -24,18 +24,31 @@
       <div class="row block-9">
           <div class="col-md-6 pr-md-5">
             <h1>To Volunteer</h1>
-          <form action="#">
+          <form action=" {{ url('/volunteer') }} " method="POST">
+              {{ csrf_field() }}
             <div class="form-group">
-              <input type="text" class="form-control px-3 py-3" placeholder="Your Name">
+              <input type="text" class="form-control px-3 py-3" name="v_name" placeholder="Your Name">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control px-3 py-3" placeholder="Your Email">
+              <input type="email" class="form-control px-3 py-3" name="v_email" placeholder="Your Email">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control px-3 py-3" placeholder="Subject">
+              <input type="text" class="form-control px-3 py-3" name="v_mobile" placeholder="Mobile No.">
             </div>
             <div class="form-group">
-              <textarea name="" id="" cols="30" rows="7" class="form-control px-3 py-3" placeholder="Message"></textarea>
+              <input type="text" class="form-control px-3 py-3" name="v_designation" placeholder="Designation">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control px-3 py-3" name="v_age" placeholder="Age">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control px-3 py-3" name="v_city" placeholder="City">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control px-3 py-3" name="v_state" placeholder="State">
+            </div>
+            <div class="form-group">
+              <textarea name="" id="" cols="30" rows="7" class="form-control px-3 py-3" name="v_details" placeholder="Why do you want to volunteer"></textarea>
             </div>
             <div class="form-group">
               <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
@@ -43,25 +56,46 @@
           </form>
         
         </div>
-      </div>
+      {{-- </div>
     </div>
     <br>
     <div class="container">
-      <div class="row block-9">
+      <div class="row block-9"> --}}
           <div class="col-md-6 pr-md-5">
             <h1>To Teach</h1>
-          <form action="#">
+          <form action=" {{ url('/teachers') }} " method="POST">
+              {{ csrf_field() }}
             <div class="form-group">
-              <input type="text" class="form-control px-3 py-3" placeholder="Your Name">
+              <input type="text" class="form-control px-3 py-3" name="t_name" placeholder="Your Name">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control px-3 py-3" placeholder="Your Email">
+              <input type="email" class="form-control px-3 py-3" name="t_email" placeholder="Your Email">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control px-3 py-3" placeholder="Subject">
+              <input type="text" class="form-control px-3 py-3" name="t_mobile" placeholder="Mobile No.">
             </div>
             <div class="form-group">
-              <textarea name="" id="" cols="30" rows="7" class="form-control px-3 py-3" placeholder="Message"></textarea>
+              <input type="text" class="form-control px-3 py-3" name="t_designation" placeholder="Designation">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control px-3 py-3" name="t_age" placeholder="Age">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control px-3 py-3" name="t_city" placeholder="City">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control px-3 py-3" name="t_state" placeholder="State">
+            </div>
+            <div class="form-group">
+              <textarea name="" id="" cols="30" rows="7" class="form-control px-3 py-3" name="t_details" placeholder="Why do you want to teach"></textarea>
+            </div>
+            <div class="form-group">
+              <h5>Photo</h5>
+              <input type="file" class="form-control px-3 py-3" name="t_photo">
+            </div>
+            <div class="form-group">
+              <h5>Resume</h5>
+              <input type="file" class="form-control px-3 py-3" name="t_resume">
             </div>
             <div class="form-group">
               <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">

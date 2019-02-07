@@ -19,40 +19,12 @@ class HomeController extends Controller
     public function home() {
         return view('home');
     }
-    public function donate() {
-        return view('donate');
-    }
-    public function getinvolved() {
-        return view('getinvolved');
-    }
-    public function gallery() {
-        return view('gallery');
-    }
-    public function events() {
-        return view('events');
-    }
-    public function about() {
-        return view('about');
-    }
-
-    public static function showEvents(Request $request)
-	{
-		$events = DB::table('events')->get();
-
-
-		//return view('events')->with('events',$events);
-	}
-
-	public static function showDonateForm(Request $request)
-	{
-		$events = DB::select(DB::raw("SELECT * FROM `events` WHERE e_status = 'upcoming' "));
-	
-		return view('donar')->with('events',$events);
-	}
-
-	public static function postDonateForm(Request $request)
-	{
-		$d_name  = $request->input('d_name');
+    public function donate(Request $request) {
+        if($request->isMethod('get')) {
+            $events = DB::select(DB::raw("SELECT * FROM `events` WHERE e_status = 'upcoming' "));
+            return view('donate')->with('events',$events);
+        }
+        $d_name  = $request->input('d_name');
 		$d_email = $request->input('d_email');
 		$d_mobile = $request->input('d_mobile');
 		$d_amount = $request->input('d_amount');
@@ -100,13 +72,27 @@ class HomeController extends Controller
 		if($donation_type == "Event")
 		$donors->e_id =$d_event;
 		$donors->save(); 
-		return redirect()->route('donate');
+		return redirect('/donate');
+    }
+    public function getinvolved() {
+        return view('getinvolved');
+    }
+    public function gallery() {
+        return view('gallery');
+    }
+    public function events() {
+        return view('events');
+    }
+    public function about() {
+        return view('about');
+    }
 
-	}
-
-	public static function showVolunteer(Request $request)
+    public static function showEvents(Request $request)
 	{
-		return view('volunteer');
+		$events = DB::table('events')->get();
+
+
+		//return view('events')->with('events',$events);
 	}
 
 	public static function postVolunteer(Request $request)
@@ -134,11 +120,6 @@ class HomeController extends Controller
 		$request->session()->flash('error','You will be soon contacted by us ...');
 		return view("volunteer");
 
-	}
-
-	public static function showTeachers(Request $request)
-	{
-		return view('teachers');
 	}
 
 	public static function postTeachers(Request $request)
