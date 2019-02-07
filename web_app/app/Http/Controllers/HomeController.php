@@ -12,6 +12,7 @@ use App\volunteer;
 use Illuminate\Support\Facades\Mail;
 use Storage;
 use Validator;
+use PDF;
 use Illuminate\Support\Facades\Input;
 
 class HomeController extends Controller
@@ -33,6 +34,7 @@ class HomeController extends Controller
 
 	public static function postDonateForm(Request $request)
 	{
+		 date_default_timezone_set("Asia/Kolkata");
 		$d_name  = $request->input('d_name');
 		$d_email = $request->input('d_email');
 		$d_mobile = $request->input('d_mobile');
@@ -69,6 +71,9 @@ class HomeController extends Controller
                           
                       }
 
+        $data = array(
+      			'name' => $d_name
+    		);
 		$donors->d_name = $d_name;
 		$donors->d_email = $d_email;
 		$donors->d_mobile = $d_mobile;
@@ -81,7 +86,22 @@ class HomeController extends Controller
 		if($donation_type == "Event")
 		$donors->e_id =$d_event;
 		$donors->save(); 
-		return redirect()->route('donate');
+		$users['name'] = $d_name;
+		$users['amount'] = $d_amount;
+		$users['date'] =  date("d-m-Y");
+		  view()->share('users',$users);
+		$pdf = PDF::loadView('pdfView')->setPaper('a4', 'landscape')->save('C:\xampp1\htdocs\app_for_ngo\web_app\public\uploads\ '.$d_name.'Donation'.'.pdf');
+
+		return $pdf->download('invoice.pdf');
+
+		 Mail::send('mail', $data, function ($message) use($d_email,$d_name) 
+    	  {
+		    	  $message->to($d_email, '')->subject('Donation Certificate');
+		      	$message->from('2016.rinku.sahu@ves.ac.in', 'NGO');
+		      	$message->attach('C:\xampp1\htdocs\app_for_ngo\web_app\public\uploads\ '.$d_name.'Donation'.'.pdf');
+		      });
+
+		return redirect('https://form.jotform.me/90363412988464');
 
 	}
 
