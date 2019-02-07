@@ -1,0 +1,43 @@
+namespace com.basic.asset.management
+
+participant Teacher identified by tid
+{
+o String tid
+o String tname
+}
+
+participant PurchaseOfficer identified by poid
+{
+o String poid
+o String poname
+}
+
+participant StoreManager identified by sname
+{
+o String sname
+}
+
+participant Principal identified by pname
+{
+o String pname
+}
+
+asset itemAsset identified by assetId
+{
+o String assetId
+-->Teacher teacher
+o Integer quantity
+}
+
+transaction OrderItems 
+{
+ -->itemAsset items
+ o Integer newItemCount
+}
+
+event ItemReceivedEvent 
+{
+ -->itemAsset items
+ o Integer howManyBefore
+ o Integer howManyNow
+}
