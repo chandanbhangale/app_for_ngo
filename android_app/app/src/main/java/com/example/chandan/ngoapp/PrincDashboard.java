@@ -71,10 +71,9 @@ public class PrincDashboard extends BaseActivity {
         chatPrinci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(PrincDashboard.this, PrincViewActivity.class);
-                i.putExtra("branch", "INSTRU");
-                startActivity(i);
-                CustomIntent.customType(PrincDashboard.this,"left-to-right");
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setClassName("com.example.chandan.chatroom", "com.example.chandan.chatroom.ChatAct");
+                startActivity(intent);
             }
         });
     }

@@ -12,10 +12,12 @@ public class PODashboard extends BaseActivity {
     private CardView viewreq;
     private CardView addPrice;
     private CardView regcomplaint;
+    private CardView pochat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_podashboard);
+        pochat= findViewById(R.id.pochat);
         regcomplaint= findViewById(R.id.regcomplaint);
         viewreq = findViewById(R.id.viewreq);
         addPrice = findViewById(R.id.addPrice);
@@ -47,6 +49,15 @@ public class PODashboard extends BaseActivity {
                 i.putExtra("flag",1);
                 startActivity(i);
                 CustomIntent.customType(PODashboard.this,"left-to-right");
+            }
+        });
+
+        pochat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setClassName("com.example.chandan.chatroom", "com.example.chandan.chatroom.ChatAct");
+                startActivity(intent);
             }
         });
 
