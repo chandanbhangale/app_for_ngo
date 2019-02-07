@@ -160,7 +160,7 @@
 
           <div class="col-md-12 pl-md-5">
               <h1>To Donate</h1>
-              <form action=" {{ url('/donate') }} " method="POST">
+              <form action=" {{ url('/donate') }} " method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                   <input type="text" class="form-control px-3 py-3" name="d_name" placeholder="Your Full Name">
@@ -210,7 +210,7 @@
                   <input type="file" class="form-control px-3 py-3" id="d_photo" name="d_photo"> 
                 </div>
                 <div class="form-group">
-                  <input type="submit" value="Send Message" class="btn btn-success py-3 px-5">
+                  <input type="submit" value="Donate" class="btn btn-success py-3 px-5">
                 </div>
               </form>
           </div>

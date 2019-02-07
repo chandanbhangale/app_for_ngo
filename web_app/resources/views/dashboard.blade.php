@@ -21,6 +21,91 @@
 
 @section('section')
  
+<div class="row">
+	<div class="col-lg-3 col-md-6 col-sm-6">
+		<div class="card card-stats">
+		<div class="card-header card-header-warning card-header-icon">
+			<div class="card-icon">
+			<i class="material-icons"></i>
+			</div>
+			<p class="card-category">User engagements</p>
+			<h3 class="card-title">184</h3>
+		</div>
+		<div class="card-footer">
+		</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 col-sm-6">
+		<div class="card card-stats">
+		<div class="card-header card-header-rose card-header-icon">
+			<div class="card-icon">
+			<i class="material-icons"></i>
+			</div>
+			<p class="card-category">Number of Donors</p>
+			<h3 class="card-title">721</h3>
+		</div>
+		<div class="card-footer">
+		</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 col-sm-6">
+		<div class="card card-stats">
+		<div class="card-header card-header-success card-header-icon">
+			<div class="card-icon">
+			<i class="material-icons"></i>
+			</div>
+			<p class="card-category">Funds Raised</p>
+			<h3 class="card-title">34,245 &#8377;</h3>
+		</div>
+		<div class="card-footer">
+		</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 col-sm-6">
+		<div class="card card-stats">
+		<div class="card-header card-header-info card-header-icon">
+			<div class="card-icon">
+			<i class="material-icons"></i>
+			</div>
+			<p class="card-category">Number of events</p>
+			<h3 class="card-title">245</h3>
+		</div>
+		<div class="card-footer">
+		</div>
+		</div>
+	</div>
+	</div>
+
+<div class="row">
+	<div class="col-md-12">
+	<div class="card">
+		<div class="card-header card-header-icon card-header-info">
+		<div class="card-icon">
+			<i class="material-icons">timeline</i>
+		</div>
+		<h4 class="card-title">Sales Summary</h4>
+		</div>
+		<div class="card-body">
+			<canvas id="barChart"></canvas>
+		</div>
+	</div>
+	</div>
+	<div class="col-md-6">
+	<div class="card">
+		<div class="card-header card-header-icon card-header-rose">
+		<div class="card-icon">
+			<i class="material-icons">insert_chart</i>
+		</div>
+		<h4 class="card-title">Multiple Bars Chart
+			<small>- Bar Chart</small>
+		</h4>
+		</div>
+		<div class="card-body">
+		
+		</div>
+	</div>
+	</div>
+</div>
 <div class="col-md-12 ml-auto mr-auto">
         <div class="card">
             <canvas id="barChart"></canvas>
@@ -42,53 +127,32 @@
 		    data: {
 		        labels: ['Jan','Feb','Mar','Apr','June','July','Aug','Sep','Oct','Nov','Dec'],
 		        datasets: [{
-		            label: 'Income',
+		            label: 'Paintings',
 		            stack: 'Stack 0',
-		            data: [2121,1123,13213,15,151,51565,651,11535,651,651,1551,561],
+		            data: Array.from({length: 40}, () => Math.floor(Math.random() * 4000)),
 		            backgroundColor: 'rgba(60, 180, 75, 0.5)',
 		            borderColor: 'rgba(60, 180, 75,1)',
 		            borderWidth: 1
 		        },{
-		            label: 'Savings',
-		            stack: 'Stack 1',
-		            data: [2121,113231,13213,15,151,51565,651,11535,651,651,1551,561],
+		            label: 'Crafts',
+		            stack: 'Stack 0',
+		            data: Array.from({length: 40}, () => Math.floor(Math.random() * 4000)),
 		            backgroundColor: 'rgba(230, 25, 75, 0.5)',
 		            borderColor: 'rgba(230, 25, 75,1)',
 		            borderWidth: 1
 		        },{
-		            label: 'Home',
-		            stack: 'Stack 1',
-		            data: [2121,11113,132213,15,151,51565,651,11535,651,651,1551,561],
+		            label: 'Artifacts',
+		            stack: 'Stack 0',
+		            data: Array.from({length: 40}, () => Math.floor(Math.random() * 4000)),
 		            backgroundColor: 'rgba(255, 225, 25, 0.5)',
 		            borderColor: 'rgba(255, 225, 25, 1)',
 		            borderWidth: 1
 		        },{
-		            label: 'Health',
-		            stack: 'Stack 1',
-		            data: [2121,111313,13213,15,151,51565,651,11535,651,651,1551,561],
+		            label: 'Clothwear',
+		            stack: 'Stack 0',
+		            data: Array.from({length: 40}, () => Math.floor(Math.random() * 4000)),
 		            backgroundColor: 'rgba(0, 130, 200, 0.5)',
 		            borderColor: 'rgba(0, 130, 200, 1)',
-		            borderWidth: 1
-		        },{
-		            label: 'Transportation',
-		            stack: 'Stack 1',
-		            data: [2121,113,13213,15,151,51565,651,11535,651,651,1551,561],
-		            backgroundColor: 'rgba(240, 50, 230, 0.5)',
-		            borderColor: 'rgba(240, 50, 230, 1)',
-		            borderWidth: 1
-		        },{
-		            label: 'Entertainment',
-		            stack: 'Stack 1',
-		            data: [2121,113,13213,15,151,51565,651,11535,651,651,1551,561],
-		            backgroundColor: 'rgba(0, 128, 128, 0.5)',
-		            borderColor: 'rgba(0, 128, 128, 1)',
-		            borderWidth: 1
-		        },{
-		            label: 'Daily-living',
-		            stack: 'Stack 1',
-		            data: [2121,113,13213,15,151,51565,651,11535,651,651,1551,561],
-		            backgroundColor: 'rgba(128, 0, 0, 0.5)',
-		            borderColor: 'rgba(128, 0, 0,1)',
 		            borderWidth: 1
 		        }]
 		    },
@@ -97,7 +161,7 @@
 		            yAxes: [{
 		                scaleLabel: {
 					        display: true,
-					        labelString: 'Price'
+					        labelString: 'Sale'
 					    },
 		                ticks: {
 		                    beginAtZero:true,
@@ -114,7 +178,7 @@
 		            }]
 		        },
 		        title: {
-		    		display: true,
+		    		display: false,
 		    		text: 'Summary',
 		    		fontSize: 20
 		    	}

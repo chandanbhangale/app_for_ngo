@@ -12,19 +12,30 @@ use App\volunteer;
 use Illuminate\Support\Facades\Mail;
 use Storage;
 use Validator;
+use PDF;
 use Illuminate\Support\Facades\Input;
 
 class HomeController extends Controller
 {
-    public function home() {
-        return view('home');
-    }
-    public function donate(Request $request) {
-        if($request->isMethod('get')) {
-            $events = DB::select(DB::raw("SELECT * FROM `events` WHERE e_status = 'upcoming' "));
-            return view('donate')->with('events',$events);
-        }
-        $d_name  = $request->input('d_name');
+		public static function showEvents(Request $request)
+	{
+		$events = DB::table('events')->get();
+
+
+		//return view('events')->with('events',$events);
+	}
+
+	public static function showDonateForm(Request $request)
+	{
+		$events = DB::select(DB::raw("SELECT * FROM `events` WHERE e_status = 'upcoming' "));
+	
+		return view('donar')->with('events',$events);
+	}
+
+	public static function postDonateForm(Request $request)
+	{
+		 date_default_timezone_set("Asia/Kolkata");
+		$d_name  = $request->input('d_name');
 		$d_email = $request->input('d_email');
 		$d_mobile = $request->input('d_mobile');
 		$d_amount = $request->input('d_amount');
@@ -60,6 +71,9 @@ class HomeController extends Controller
                           
                       }
 
+        $data = array(
+      			'name' => $d_name
+    		);
 		$donors->d_name = $d_name;
 		$donors->d_email = $d_email;
 		$donors->d_mobile = $d_mobile;
@@ -72,24 +86,22 @@ class HomeController extends Controller
 		if($donation_type == "Event")
 		$donors->e_id =$d_event;
 		$donors->save(); 
-		return redirect('/donate');
-    }
-    public function getinvolved() {
-        return view('getinvolved');
-    }
-    public function gallery() {
-        return view('gallery');
-    }
-    public function events() {
-        return view('events');
-    }
-    public function about() {
-        return view('about');
-    }
+		$users['name'] = $d_name;
+		$users['amount'] = $d_amount;
+		$users['date'] =  date("d-m-Y");
+		  view()->share('users',$users);
+		$pdf = PDF::loadView('pdfView')->setPaper('a4', 'landscape')->save('C:\xampp1\htdocs\app_for_ngo\web_app\public\uploads\ '.$d_name.'Donation'.'.pdf');
 
-    public static function showEvents(Request $request)
-	{
-		$events = DB::table('events')->get();
+		return $pdf->download('invoice.pdf');
+
+		 Mail::send('mail', $data, function ($message) use($d_email,$d_name) 
+    	  {
+		    	  $message->to($d_email, '')->subject('Donation Certificate');
+		      	$message->from('2016.rinku.sahu@ves.ac.in', 'NGO');
+		      	$message->attach('C:\xampp1\htdocs\app_for_ngo\web_app\public\uploads\ '.$d_name.'Donation'.'.pdf');
+		      });
+
+		return redirect('https://form.jotform.me/90363412988464');
 
 
 		//return view('events')->with('events',$events);
