@@ -19,13 +19,18 @@
         <activity android:name=".PODashboard" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".Signin" />
-        <activity android:name=".ViewPOActivity" />
         <activity android:name=".StatusActivity" />
         <activity android:name=".PrincDashboard" />
         <activity android:name=".PrincViewActivity" />
         <activity android:name=".RequestAsset" />
         <activity android:name=".NoRequest" />
-        <activity android:name=".TeacherDashboard"></activity>
+        <activity android:name=".TeacherDashboard" />
+        <activity android:name=".StoreDashboard" />
+        <activity android:name=".RegComp" />
+        <activity android:name=".ViewPOActivity" />
+        <activity android:name=".AddMarks" />
+        <activity android:name=".graphAct" />
+        <activity android:name=".ChatAct"></activity>
     </application>
 
 </manifest>

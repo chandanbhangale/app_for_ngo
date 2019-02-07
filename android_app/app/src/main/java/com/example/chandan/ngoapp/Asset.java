@@ -12,6 +12,7 @@ public class Asset {
     private String date;
     private int price;
 
+
     public Asset(String title, int quantity, String barcode, String status, String userId, String branch,String parentkey,String date,int price) {
         this.title = title;
         this.quantity = quantity;

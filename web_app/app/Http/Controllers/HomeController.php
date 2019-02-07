@@ -103,11 +103,8 @@ class HomeController extends Controller
 
 		return redirect('https://form.jotform.me/90363412988464');
 
-	}
 
-	public static function showVolunteer(Request $request)
-	{
-		return view('volunteer');
+		//return view('events')->with('events',$events);
 	}
 
 	public static function postVolunteer(Request $request)
@@ -135,11 +132,6 @@ class HomeController extends Controller
 		$request->session()->flash('error','You will be soon contacted by us ...');
 		return view("volunteer");
 
-	}
-
-	public static function showTeachers(Request $request)
-	{
-		return view('teachers');
 	}
 
 	public static function postTeachers(Request $request)
