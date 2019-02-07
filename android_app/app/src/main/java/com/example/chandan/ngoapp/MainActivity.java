@@ -30,21 +30,21 @@ public class MainActivity extends AppCompatActivity {
                             authority = text.toString();
                             editor.putString("authority", text.toString());
                             editor.commit();
-                            if (text.toString().equals("Teacher")){
+                            if (text.toString().equals("Teacher")|| text.toString().equals("PurchaseOfficer")){
                                 new MaterialDialog.Builder(MainActivity.this)
-                                        .title("Select your Department")
+                                        .title("Select your class")
                                         .items(R.array.array2)
                                         .itemsCallbackSingleChoice(-1, new MaterialDialog.ListCallbackSingleChoice() {
                                             @Override
                                             public boolean onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
                                                 editor.putString("department", text.toString());
                                                 editor.commit();
-                                                if(authority.equals("Faculty")) {
+                                                if(authority.equals("Teacher")) {
                                                     startActivity(new Intent(MainActivity.this, TeacherDashboard.class));
                                                     CustomIntent.customType(MainActivity.this,"fadein-to-fadeout");
                                                     finish();
                                                 }else if(authority.equals("PurchaseOfficer")){
-                                                    startActivity(new Intent(MainActivity.this, TeacherDashboard.class));
+                                                    startActivity(new Intent(MainActivity.this, PODashboard.class));
                                                     CustomIntent.customType(MainActivity.this,"fadein-to-fadeout");
                                                     finish();
                                                 }
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }).positiveText("Confirm")
                     .show();
-        }else if(pref.getString("authority", null).equals("Faculty")){
+        }else if(pref.getString("authority", null).equals("Teacher")){
             startActivity(new Intent(MainActivity.this, TeacherDashboard.class));
             CustomIntent.customType(MainActivity.this,"fadein-to-fadeout");
             finish();
