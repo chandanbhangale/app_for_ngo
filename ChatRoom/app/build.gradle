@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.chandan.ngoapp"
+        applicationId "com.example.chandan.chatroom"
         minSdkVersion 23
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -17,7 +17,7 @@ android {
         }
     }
 }
-//
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
@@ -43,5 +43,3 @@ dependencies {
 
 
 }
-apply plugin: 'com.google.gms.google-services'
-com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true

@@ -2,10 +2,12 @@ package com.example.chandan.ngoapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,11 +32,13 @@ public class TeacherDashboard extends BaseActivity {
     private CardView chatteacher;
     private Button btnBarcode;
     private IntentIntegrator qrScan;
+    static MyDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_dashboard);
-
+        db = new MyDatabase(this);
         entermarks = findViewById(R.id.entermarks);
         viewgraph = findViewById(R.id.viewgraph);
         requestasset = findViewById(R.id.requestasset);
@@ -44,7 +48,7 @@ public class TeacherDashboard extends BaseActivity {
         entermarks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TeacherDashboard.this,RequestAsset.class));
+                startActivity(new Intent(TeacherDashboard.this,AddMarks.class));
                 CustomIntent.customType(TeacherDashboard.this,"left-to-right");
 
             }
@@ -53,7 +57,7 @@ public class TeacherDashboard extends BaseActivity {
         viewgraph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TeacherDashboard.this, StatusActivity.class));
+                startActivity(new Intent(TeacherDashboard.this, graphAct.class));
                 CustomIntent.customType(TeacherDashboard.this,"left-to-right");
             }
         });
@@ -61,7 +65,7 @@ public class TeacherDashboard extends BaseActivity {
         requestasset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TeacherDashboard.this, StatusActivity.class));
+                startActivity(new Intent(TeacherDashboard.this, RequestAsset.class));
                 CustomIntent.customType(TeacherDashboard.this,"left-to-right");
             }
         });
@@ -69,7 +73,7 @@ public class TeacherDashboard extends BaseActivity {
         registercomplaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TeacherDashboard.this, StatusActivity.class));
+                startActivity(new Intent(TeacherDashboard.this, RegComp.class));
                 CustomIntent.customType(TeacherDashboard.this,"left-to-right");
             }
         });
@@ -77,8 +81,17 @@ public class TeacherDashboard extends BaseActivity {
         chatteacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TeacherDashboard.this, StatusActivity.class));
-                CustomIntent.customType(TeacherDashboard.this,"left-to-right");
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setClassName("com.example.chandan.demo30", "com.example.chandan.demo30.MainActivity");
+                startActivity(intent);
+
+               /* Intent intent = getPackageManager().getLaunchIntentForPackage("com.package.chandan");
+               startActivity(intent);
+*/
+
+
+
+
             }
         });
     }
