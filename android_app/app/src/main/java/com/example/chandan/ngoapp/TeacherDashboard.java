@@ -82,7 +82,7 @@ public class TeacherDashboard extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.setClassName("com.example.chandan.demo30", "com.example.chandan.demo30.MainActivity");
+                intent.setClassName("com.example.chandan.chatroom", "com.example.chandan.chatroom.ChatAct");
                 startActivity(intent);
 
                /* Intent intent = getPackageManager().getLaunchIntentForPackage("com.package.chandan");
